@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sign-In</title>
+	<!-- fontAswome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="contanier">
+		<!-- Sign in -->
+		<div class="form">
+			<div class="title">Sign In</div>
+			<div class="inputBox">
+				<input type="text" required id="UserName">
+				<i class="fa-regular fa-user"></i>
+				<span class="s-title">username</span>
+			</div>
+			<div class="inputBox">
+				<input type="password" required id="Password" id="Password" >
+				<i class="fa-solid fa-lock"></i>
+				<span class="s-title">password</span>
+			</div>
+			<div class="info">
+			    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		    </div>
+			 <div class="chackbox">
+			 	<input type="checkbox" name="" onclick="myFunction()">
+                <span class="show-password"></span>
+                <span>Show Password</span>
+            </div>
+			
+				<input type="submit" value="Log In" id="signIn">
+			
+			<p>Not Registered? <a href="signup.html" class="create">Creat an account</a></p>
+		</div>
+	</div>
+
+<script type="text/javascript">
+		// show password
+			function myFunction() 
+				{
+				  var x = document.getElementById("Password");
+				  if (x.type === "password")
+				    {
+				   	   x.type = "text";
+				   	}
+				else 
+					{
+				       x.type = "password";
+				    }
+				}
+		//login
+let UserName =document.querySelector("#UserName");
+let Password =document.querySelector("#Password");
+let signinBtn =document.querySelector("#signIn");
+
+let getUser = localStorage.getItem('userName');
+let getPassword =localStorage.getItem('password')
+
+
+signinBtn.addEventListener('click' ,login);
+
+function login(e) 
+		{
+			e.preventDefault();
+			if (UserName.value === "" || Password.value === "" )
+			 	{
+			 		alert("Please Fill Data");
+			 	}	
+		    else
+				{
+				 	if (getUser && getUser.trim() === UserName.value.trim() && getPassword && getPassword ===Password.value)
+				 		{
+				 			// console.log("test");
+				 			setTimeout(() => {
+			 				window.location = "index.html";},1500);
+				 		}
+				 	else
+					 	{
+							alert("username or password is wrong,please try again");
+					 	}
+				}
+
+				
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #223243;
+  color: #fff;
+}
+
+.contanier 
+{
+  position: relative;
+  width: 350px;
+  height: 530px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  border: 8px solid #223243;
+  overflow: hidden;
+  box-shadow: -5px 5px 15px rgba(255, 255, 255, 0.1);
+  }
+  @keyframes anim {
+            0%{transform: rotate(0deg);}
+            100%{transform: rotate(360deg);}
+        }
+
+        .contanier::before, .contanier::after{
+            content: "";
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background-image: conic-gradient(transparent,
+            transparent,transparent, #00d9ff);
+            animation: anim 4s linear infinite;
+        }
+        .contanier::after{
+            animation-delay: -2s;
+            background-image: conic-gradient(transparent,
+            transparent,transparent, #ff00d0);
+        }
+.contanier .form {
+   display: flex;
+  /*justify-content: center;
+  align-items: center;*/
+    flex-direction: column;
+    gap: 25px;
+    position: absolute;
+    inset: 5px;
+    background: #223243;
+    color: #fff;
+    font-size: 15px;
+    z-index: 1;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.contanier .form.signIn,
+.contanier.signInForm .form.signUp {
+  display: none;
+}
+
+.contanier.signInForm .form.signIn {
+  display: flex;
+}
+
+.contanier .form .title {
+      color: #00ccff;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.contanier .form .inputBox {
+  position: relative;
+  width: 300px;
+}
+
+.contanier .form .inputBox input {
+  padding: 12px 10px 12px 48px;
+  width: 100%;
+  background: #223243;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #fff;
+  font-weight: 300;
+  border-radius: 25px;
+  font-size: 1em;
+  box-shadow: -5px 5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35);
+  transition: 0.5s;
+  outline: none;
+
+}
+
+.contanier .form .inputBox .s-title {
+    position: absolute;
+    top: -13px;
+    left: 10px;
+    color: #00ccff;
+    padding: 6px;
+    font-size: 12px;
+
+}
+
+
+.contanier .form .inputBox i {
+  position: absolute;
+  top: 15px;
+  left: 16px;
+  width: 25px;
+  padding: 2px 0;
+  padding-right: 8px;
+  color: #00dfc4;
+  border-right: 1px solid #00dfc4;
+
+}
+
+ input[type="submit"] {
+      outline: none;
+    background: #ff00d0;
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    border: none;
+    padding: 8px 20px;
+     border-radius:20px; 
+    margin-top: 10px;
+    cursor: pointer;
+  box-shadow: -5px 5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35);
+}
+input[type="submit"]:hover
+  {
+     background: #a20085;
+  }
+ p {
+  color: #00ccff;
+    padding: 6px;
+    font-size: 15px;
+}
+
+p a {
+  font-weight: 500;
+  color: #fff;
+}
+
+

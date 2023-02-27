@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sign-Up</title>
+	<!-- fontAswome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="contanier">
+		<!-- signUp -->
+		<div class="form signUp">
+			<div class="title">Sign Up</div>
+			<div class="inputBox">
+				<input type="text" required id="username" >
+				<i class="fa-regular fa-user"></i>
+				<span class="s-title">username</span>
+			</div>
+			<div class="inputBox">
+				<input type="email" required id="email">
+				<i class="fa-regular fa-envelope"></i>
+				<span class="s-title">email address</span>
+			</div>
+			<div class="inputBox">
+				<input type="password" required id="password">
+				<i class="fa-solid fa-lock"></i>
+				<span class="s-title">create password</span>
+			</div>
+			<div class="inputBox">
+				<input type="password" required id="password2">
+				<i class="fa-solid fa-lock"></i>
+				<span class="s-title">confirm password</span>
+			</div>
+			
+				<input type="submit" value="Create Account" id="signup" >
+			
+			<p>Already a member? <a href="signin.html" class="login" >Log In</a></p>
+		</div>
+		
+	</div>
+
+	<script type="text/javascript">
+
+		//Register User
+	let userName =document.querySelector("#username");//input ,to get the value add(.value)
+	let email =document.querySelector("#email");
+	let password =document.querySelector("#password");
+	let registerBtn =document.querySelector("#signup");
+
+
+	registerBtn.addEventListener("click",register);
+
+	function register(e)
+	 	{
+		 	e.preventDefault();//stop the behavior of refresh
+			if (userName.value === "" || email.value === "" || password.value === "" )
+			 	{
+			 		alert("Please Fill Data");
+			 	}	
+			 else
+				 {
+				 	localStorage.setItem('userName',userName.value);
+				 	localStorage.setItem('email',email.value);
+				 	localStorage.setItem('password',password.value);
+				 	setTimeout(() => {
+				 		window.location = "signin.html";},1500);//1500 wating 1.5 second
+				 }
+		}
+	</script>
+</body>
+</html>
